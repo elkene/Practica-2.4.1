@@ -99,18 +99,18 @@ public class Main {
         Rueda ruedaDelantera = new Rueda();
         ruedaDelantera.setDiametro(26);
         ruedaDelantera.setMaterial("Aluminio");
-        ruedaDelantera.setTipo("MTB");
+        ruedaDelantera.setTipo("Rueda de montaña");
 
         // Crear una nueva rueda trasera
         Rueda ruedaTrasera = new Rueda();
         ruedaTrasera.setDiametro(26);
         ruedaTrasera.setMaterial("Aluminio");
-        ruedaTrasera.setTipo("MTB");
+        ruedaTrasera.setTipo("Rueda de montaña");
 
         // Crear un nuevo cuadro
         Cuadro cuadro = new Cuadro();
         cuadro.setMaterial("Acero");
-        cuadro.setTipo("MTB");
+        cuadro.setTipo("Montaña");
         cuadro.setColor("Negro");
 
         // Establecer las partes en la bicicleta
