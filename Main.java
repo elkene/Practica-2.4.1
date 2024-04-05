@@ -2,7 +2,13 @@
 class Rueda {
     private int diametro;
     private String material;
-    private String tipo;
+    private String tipoderueda;
+
+    public Rueda(int diametro, String material, String tipoderueda) {
+        this.diametro = diametro;
+        this.material = material;
+        this.tipoderueda = tipoderueda;
+    }
 
     public int getDiametro() {
         return diametro;
@@ -20,20 +26,25 @@ class Rueda {
         this.material = material;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getTipoderueda() {
+        return tipoderueda;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipoderueda(String tipoderueda) {
+        this.tipoderueda = tipoderueda;
     }
 }
 
-// Clase Cuadro
 class Cuadro {
     private String material;
     private String tipo;
     private String color;
+
+    public Cuadro(String material, String tipo, String color) {
+        this.material = material;
+        this.tipo = tipo;
+        this.color = color;
+    }
 
     public String getMaterial() {
         return material;
@@ -60,11 +71,16 @@ class Cuadro {
     }
 }
 
-// Clase Bicicleta
 class Bicicleta {
     private Rueda ruedaDelantera;
     private Rueda ruedaTrasera;
     private Cuadro cuadro;
+
+    public Bicicleta(Rueda ruedaDelantera, Rueda ruedaTrasera, Cuadro cuadro) {
+        this.ruedaDelantera = ruedaDelantera;
+        this.ruedaTrasera = ruedaTrasera;
+        this.cuadro = cuadro;
+    }
 
     public Rueda getRuedaDelantera() {
         return ruedaDelantera;
@@ -90,49 +106,30 @@ class Bicicleta {
         this.cuadro = cuadro;
     }
 }
+
 public class Main {
     public static void main(String[] args) {
         // Crear una nueva bicicleta
-        Bicicleta miBicicleta = new Bicicleta();
-
-        // Crear una nueva rueda delantera
-        Rueda ruedaDelantera = new Rueda();
-        ruedaDelantera.setDiametro(26);
-        ruedaDelantera.setMaterial("Aluminio");
-        ruedaDelantera.setTipo("MTB");
-
-        // Crear una nueva rueda trasera
-        Rueda ruedaTrasera = new Rueda();
-        ruedaTrasera.setDiametro(26);
-        ruedaTrasera.setMaterial("Aluminio");
-        ruedaTrasera.setTipo("MTB");
-
-        // Crear un nuevo cuadro
-        Cuadro cuadro = new Cuadro();
-        cuadro.setMaterial("Acero");
-        cuadro.setTipo("MTB");
-        cuadro.setColor("Negro");
-
-        // Establecer las partes en la bicicleta
-        miBicicleta.setRuedaDelantera(ruedaDelantera);
-        miBicicleta.setRuedaTrasera(ruedaTrasera);
-        miBicicleta.setCuadro(cuadro);
+        Bicicleta miBicicleta = new Bicicleta(
+                new Rueda(26, "Aluminio", "Rueda de Montaña"),
+                new Rueda(26, "Aluminio", "Rueda de Montaña"),
+                new Cuadro("Fibra de carbono", "Marco de Montaña", "Negro")
+        );
 
         // Imprimir algunos atributos de las partes y de la bicicleta
         System.out.println("Atributos de la rueda delantera:");
         System.out.println("Diametro: " + miBicicleta.getRuedaDelantera().getDiametro());
         System.out.println("Material: " + miBicicleta.getRuedaDelantera().getMaterial());
-        System.out.println("Tipo: " + miBicicleta.getRuedaDelantera().getTipo());
+        System.out.println("Tipo: " + miBicicleta.getRuedaDelantera().getTipoderueda());
+
+        System.out.println("\nAtributos de la rueda trasera:");
+        System.out.println("Diametro: " + miBicicleta.getRuedaTrasera().getDiametro());
+        System.out.println("Material: " + miBicicleta.getRuedaTrasera().getMaterial());
+        System.out.println("Tipo: " + miBicicleta.getRuedaTrasera().getTipoderueda());
 
         System.out.println("\nAtributos del cuadro:");
         System.out.println("Material: " + miBicicleta.getCuadro().getMaterial());
         System.out.println("Tipo: " + miBicicleta.getCuadro().getTipo());
         System.out.println("Color: " + miBicicleta.getCuadro().getColor());
-
-        // Imprimir algunos atributos de la bicicleta
-        System.out.println("\nAtributos de la bicicleta:");
-        System.out.println("Diametro de la rueda delantera: " + miBicicleta.getRuedaDelantera().getDiametro());
-        System.out.println("Diametro de la rueda trasera: " + miBicicleta.getRuedaTrasera().getDiametro());
-        System.out.println("Color del cuadro: " + miBicicleta.getCuadro().getColor());
     }
 }
