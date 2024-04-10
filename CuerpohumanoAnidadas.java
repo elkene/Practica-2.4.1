@@ -122,22 +122,22 @@ class CuerpoHumanoAnidadas {
         ape.setTipo("Sano");
         ape.setLongitud(6.5);
 
-        System.err.println("------------------------------");
+        System.out.println("------------------------------");
         System.out.println("Corazon:");
         System.out.println("Ritmo cardiaco: " + cor.getRitmoCardiaco());
         System.out.println("Estado: " + cor.getTipo());
-        System.err.println("------------------------------");
+        System.out.println("------------------------------");
         System.out.println("Pulmon:");
         System.out.println("Capacidad: " + pul.getCapacidad() + " ml");
         System.out.println("Estado: " + pul.getTipo());
-        System.err.println("------------------------------");
+        System.out.println("------------------------------");
         System.out.println("Higado:");
         System.out.println("Estado: " + hig.getTipo());
         System.out.println("Peso: " + hig.getPeso() + " kg");
-        System.err.println("------------------------------");
+        System.out.println("------------------------------");
         System.out.println("Apendice:");
         System.out.println("Estado: " + ape.getTipo());
         System.out.println("Longitud: " + ape.getLongitud() + " cm");
-        System.err.println("------------------------------");
+        System.out.println("------------------------------");
     }
 }
